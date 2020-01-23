@@ -1,0 +1,11 @@
+<p>my-component works!</p>
+{{id}}
+<input [(ngModel)]="id">
+<input type="text" id="first" readonly value={{id}}>
+<input type="text" value={{pokemons}}>
+<input type="text" [(ngModel)] = "fileterpokemon">
+<select [(ngModel)]="pokemons.name">
+    <option *ngFor="let pokemon of pokemons | filterPokemonPipe:'name':fileterpokemon" [value]="pokemons.name">
+          {{pokemon.name}}
+    </option>
+</select>
