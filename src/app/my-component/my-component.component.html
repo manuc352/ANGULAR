@@ -4,10 +4,12 @@
 <input type="text" id="first" readonly value={{id}}>
 <input type="text" value={{pokemons}}>
 <input type="text" [(ngModel)] = "fileterpokemon">
-<select [(ngModel)]="pokemons.name">
+<select id = 1 [(ngModel)]="pokemons.name">
     <option *ngFor="let pokemon of pokemons | filterPokemonPipe:'name':fileterpokemon" [value]="pokemons.name">
           {{pokemon.name}}
     </option>
 </select>
 <button (click)="valid();">Go</button>
 {{clickMessage}}`
+
+<input type="text" value="Selectionner pokemon">

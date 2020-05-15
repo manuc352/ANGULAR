@@ -15,6 +15,10 @@ interface IPokemon {
   url ?:string;
 }
 
+interface UnPokemonResult {
+  result ?: IPokemon;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,7 +33,7 @@ export class APIPokemonService {
     return this.httpService.get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=807');
   }
 
-  getPokemon(poke:any):Observable<any>{
+  getPokemon(poke:any):Observable<PokemonResult>{
     return this.httpService.get('https://pokeapi.co/api/v2/pokemon/'+poke);
   }
 }

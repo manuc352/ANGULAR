@@ -11,6 +11,6 @@ export class Pokemon {
     toString(){
         return '['+this.id +','+this.name+']';
     }
-    
-    
+
+
 }

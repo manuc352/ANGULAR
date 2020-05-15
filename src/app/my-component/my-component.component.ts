@@ -15,9 +15,16 @@ export class MyComponentComponent implements OnInit {
   clickMessage='';
 
   constructor(private monservice: APIPokemonService) { }
-  valid(message){
-    var a = document.querySelector("select").selectedIndex;
-    //this.clickMessage = this.pokemons[a];
+  valid(){
+    var a = document.getElementById(1).selectedIndex;
+    var b = this.pokemons[a].toString();
+    var c = b.substring(3, b.length-1);
+    console.log(a);
+    console.log(c)
+    this.monservice.getPokemon(c).subscribe(res =>{
+      let truc = res
+      alert("name : " +truc.name + "\n" + "base_experience : "+truc.base_experience+"\n"+"height : "+truc.height+"\n"+"species : "+res.species.name)
+    });
   }
 
   ngOnInit() {
@@ -29,9 +36,8 @@ export class MyComponentComponent implements OnInit {
       }
     });
 
+
+
+
   }
-
-
-
-
 }
